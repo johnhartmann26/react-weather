@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Alata", sans-serif;
+  background: #fff8e8;
+  color: #002642;
+}
+.Currently {
+  width: 80%;
+  margin: 0 auto;
+}
+.Hourly {
+  width: 80%;
+  margin: 0 auto;
+}
+.Daily {
+  width: 80%;
+  margin: 0 auto;
+}
+.weather-icon {
+  width: 4em;
+  height: 4em;
+}
+h1 {
+  font-size: 2em;
+}
+#summary {
+  font-size: 1.1em;
+}
+.temperatureContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.smallerTempCon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.realTemp {
+  font-size: 2.4em;
+}
+.feelsLike {
+  font-size: 1em;
+}
+.temperatureBarChart {
+  display: flex;
+  justify-content: flex-start;
+}
+.emptyBar {
+  height: 6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.filledBar {
+  width: 4em;
+  background: #002642;
+  color: white;
+  text-align: center;
+  border-radius: 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+}
+.temperatureBar {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  width: 5em;
+  text-align: center;
+}
+.temperatureBar img {
+  width: 3em;
+  height: 3em;
+}
