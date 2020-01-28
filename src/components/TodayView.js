@@ -2,11 +2,10 @@ import React from "react";
 import Daily from "./Daily";
 import Hourly from "./Hourly";
 import Currently from "./Currently";
-import ReturnImage from "./ReturnImage";
 
 class TodayView extends React.Component {
   constructor(props) {
-    super(props); //
+    super(props);
     this.state = {
       dark_sky_data: false,
       userLocation: {

@@ -1,23 +1,17 @@
 import React from "react";
+
+import WeatherBarDaily from "./WeatherBarDaily";
 function Daily(props) {
-  // function returnImage(icon) {
-  //   if (icon === "rain") {
-  //     return (
-  //       <img
-  //         className="weather-icon"
-  //         src={require("./weather-icons/rain.png")}
-  //         alt={icon}
-  //       />
-  //     );
-  //   }
-  // }
   return (
     <div className="Daily">
-      <h1>Later this week</h1>
+      <h1>Next few days</h1>
       <p className="summary">{props.weatherData.summary}</p>
-      {
-        props.weatherData.data[0].temperatureHigh // can do tempHigh or tempLow
-      }
+      <div className="graph">
+        <div className="maxBar">
+          <div className="realBar"></div>
+        </div>
+        <WeatherBarDaily weatherData={props.weatherData} />
+      </div>
     </div>
   );
 }

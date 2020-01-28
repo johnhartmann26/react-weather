@@ -1,18 +1,6 @@
 import React from "react";
 import WeatherBar from "./WeatherBar";
 function Hourly(props) {
-  function returnImage(icon) {
-    if (icon === "rain") {
-      return (
-        <img
-          className="weather-icon"
-          src={require("./weather-icons/rain.png")}
-          alt={icon}
-        />
-      );
-    }
-  }
-
   return (
     <div className="Hourly">
       <h1>Later today</h1>

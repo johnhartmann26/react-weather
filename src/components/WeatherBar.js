@@ -1,11 +1,13 @@
 import React from "react";
 import ReturnImage from "./ReturnImage";
 function WeatherBar(props) {
-  let highTemp = -100;
-
+  let tempLimits = [1000, -1000]; // min, max
   for (let i = 1; i < 7; i++) {
-    if (props.weatherData.data[i].temperature > highTemp) {
-      highTemp = props.weatherData.data[i].temperature;
+    if (props.weatherData.data[i].temperature < tempLimits[0]) {
+      tempLimits[0] = props.weatherData.data[i].temperature;
+    }
+    if (props.weatherData.data[i].temperature > tempLimits[1]) {
+      tempLimits[1] = props.weatherData.data[i].temperature;
     }
   }
   function returnBar(data, high) {
@@ -41,28 +43,35 @@ function WeatherBar(props) {
 
       return <div className="timeBar">{timeDictionary[hour]}</div>;
     }
-
-    let per = 100 - (Math.round(high) - Math.round(data.temperature)) * 15;
+    let range = Math.round(tempLimits[1]) - Math.round(tempLimits[0]);
+    let difference = Math.round(data.temperature) - Math.round(tempLimits[0]);
+    let percentOfBar = (difference / range) * 0.6 * 100 + 40;
     return (
       <div className="temperatureBar">
         <div className="emptyBar">
-          <div className="filledBar" style={{ height: per + "%" }}>
+          <div
+            className="filledBar"
+            id="hourly"
+            style={{ height: percentOfBar + "%" }}
+          >
             {Math.round(data.temperature)}°
           </div>
         </div>
-        {prettyHour()}
-        <ReturnImage icon={props.weatherData.icon} />
+        <div className="text-and-icon-wrapper">
+          {prettyHour()}
+          <ReturnImage icon={props.weatherData.icon} />
+        </div>
       </div>
     );
   }
   return (
     <div className="temperatureBarChart">
-      {returnBar(props.weatherData.data[1], highTemp)}
-      {returnBar(props.weatherData.data[2], highTemp)}
-      {returnBar(props.weatherData.data[3], highTemp)}
-      {returnBar(props.weatherData.data[4], highTemp)}
-      {returnBar(props.weatherData.data[5], highTemp)}
-      {returnBar(props.weatherData.data[6], highTemp)}
+      {returnBar(props.weatherData.data[1], tempLimits)}
+      {returnBar(props.weatherData.data[2], tempLimits)}
+      {returnBar(props.weatherData.data[3], tempLimits)}
+      {returnBar(props.weatherData.data[4], tempLimits)}
+      {returnBar(props.weatherData.data[5], tempLimits)}
+      {returnBar(props.weatherData.data[6], tempLimits)}
     </div>
   );
 }
