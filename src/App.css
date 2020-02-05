@@ -3,24 +3,35 @@
   padding: 0;
   font-family: "Alata", sans-serif;
   color: #002642;
+  flex-wrap: wrap;
 }
 html {
   background: #fff8e8;
 }
 .Header {
   background: #002642;
+  overflow: hidden;
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+}
+.Header div {
   color: #fff;
 }
+.TodayView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .Currently {
-  width: 80%;
   margin: 0 auto;
 }
 .Hourly {
-  width: 80%;
   margin: 0 auto;
 }
 .Daily {
-  width: 80%;
   margin: 0 auto;
 }
 .weather-icon {
@@ -34,6 +45,7 @@ h1 {
   font-size: 1.1em;
 }
 .temperatureContainer {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -50,6 +62,7 @@ h1 {
   font-size: 1em;
 }
 .temperatureBarChart {
+  margin-top: 1rem;
   display: flex;
   justify-content: flex-start;
 }
@@ -104,4 +117,28 @@ h1 {
 }
 #hourly {
   border-radius: 22%;
+}
+.Footer {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Footer a {
+  margin: 1rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  background: #002642;
+  color: #fff8e8;
+  width: 10rem;
+  height: 2rem;
+  text-align: center;
+}
+.Footer a:hover {
+  background: #fff8e8;
+  color: #002642;
+  border: 1px solid #002642;
 }

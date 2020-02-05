@@ -2,6 +2,7 @@ import React from "react";
 import Daily from "./Daily";
 import Hourly from "./Hourly";
 import Currently from "./Currently";
+import Footer from "./Footer";
 
 class TodayView extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class TodayView extends React.Component {
     this.state = {
       dark_sky_data: false,
       userLocation: {
+        city: "Houston",
         latitude: 29.7604,
         longitude: -95.3698
       }
@@ -41,6 +43,7 @@ class TodayView extends React.Component {
           />
           <Hourly weatherData={this.state.dark_sky_data.hourly} />
           <Daily weatherData={this.state.dark_sky_data.daily} />
+          <Footer />
         </div>
       );
     }

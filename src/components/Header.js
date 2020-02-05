@@ -3,11 +3,7 @@ import React from "react";
 function Header(props) {
   return (
     <div className="Header">
-      header
-      <ul>
-        <li>Search bar</li>
-        <li>Credits</li>
-      </ul>
+      <div style={{ marginLeft: "2rem" }}>Houston Weather</div>
     </div>
   );
 }

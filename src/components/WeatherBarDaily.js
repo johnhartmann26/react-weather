@@ -61,13 +61,13 @@ function WeatherBarDaily(props) {
     let range = Math.round(tempLimits[1]) - Math.round(tempLimits[0]);
     let difference =
       Math.round(data.temperatureHigh) - Math.round(tempLimits[0]);
-    let percentOfBar = (difference / range) * 0.6 * 100 + 40;
+    let percentOfBar = (difference / range) * 60 + 40;
 
     let rangeLow = Math.round(tempLimitsLow[1]) - Math.round(tempLimitsLow[0]);
     let differenceLow =
       Math.round(data.temperatureLow) - Math.round(tempLimitsLow[0]);
-    let percentOfBarLow = (differenceLow / rangeLow) * 0.6 * 100 + 40;
-    console.log(differenceLow, rangeLow);
+    let percentOfBarLow = (differenceLow / rangeLow) * -60 + 100;
+    console.log(percentOfBarLow);
     return (
       <div className="temperatureBar">
         <div className="emptyBar">

@@ -1,7 +1,6 @@
 import React from "react";
 import TodayView from "./components/TodayView";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import "./App.css";
 
 class App extends React.Component {
@@ -15,7 +14,6 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <TodayView />
-        <Footer />
       </div>
     );
   }
