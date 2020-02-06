@@ -59,7 +59,7 @@ function WeatherBar(props) {
         </div>
         <div className="text-and-icon-wrapper">
           {prettyHour()}
-          <ReturnImage icon={props.weatherData.icon} />
+          <ReturnImage icon={data.icon} />
         </div>
       </div>
     );

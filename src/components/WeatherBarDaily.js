@@ -67,7 +67,6 @@ function WeatherBarDaily(props) {
     let differenceLow =
       Math.round(data.temperatureLow) - Math.round(tempLimitsLow[0]);
     let percentOfBarLow = (differenceLow / rangeLow) * -60 + 100;
-    console.log(percentOfBarLow);
     return (
       <div className="temperatureBar">
         <div className="emptyBar">
@@ -85,7 +84,7 @@ function WeatherBarDaily(props) {
         </div>
         <div className="text-and-icon-wrapper">
           {prettyDay()}
-          <ReturnImage icon={props.weatherData.icon} />
+          <ReturnImage icon={data.icon} />
         </div>
       </div>
     );
